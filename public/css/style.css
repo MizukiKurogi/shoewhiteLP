@@ -350,7 +350,7 @@ button[type="submit"] {
   flex-wrap: wrap;
   justify-content: center;
   padding: 3rem 1rem;
-  background-color: var(--bg-white);
+  background-color: #fff;
 }
 
 .image {
