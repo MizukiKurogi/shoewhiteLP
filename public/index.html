@@ -1,145 +1,368 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="靴の宅配クリーニングなら全国対応のプロ品質。スニーカー・革靴対応、撥水加工やカビ除去も可能。">
-  <meta name="keywords" content="靴 クリーニング, スニーカー 洗い方, 宅配 クリーニング, カビ除去, 撥水加工">
-  <meta property="og:title" content="靴のオンラインクリーニング | プロの手洗い品質">
-  <meta property="og:description" content="白スニーカーなど宅配で簡単プロ仕上げ。撥水・カビ対策にも対応。">
-  <meta property="og:image" content="https://shoe-white.com/img/ogp.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://shoe-white.com/">
-  <meta property="og:site_name" content="靴のオンラインクリーニング">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://shoe-white.com/">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <title>靴のオンラインクリーニング | プロの手洗い品質</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "靴のオンラインクリーニング",
-    "description": "靴の宅配クリーニングなら全国対応のプロ品質。スニーカー・革靴対応、撥水加工やカビ除去も可能。",
-    "provider": {
-      "@type": "Organization",
-      "name": "靴クリーニングサービス",
-      "url": "https://shoe-white.com"
-    },
-    "areaServed": "JP",
-    "serviceType": "靴クリーニング",
-    "offers": {
-      "@type": "Offer",
-      "price": "1980",
-      "priceCurrency": "JPY",
-      "availability": "https://schema.org/InStock"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ファーストビュー | Shoe White</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #fff;
     }
-  }
-  </script>
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .firstview {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    .firstview picture,
+    .firstview img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .firstview-content {
+      padding: 2rem;
+      max-width: 90%;
+    }
+
+    .firstview h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .firstview p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .line-button, .cta-line-btn {
+      display: inline-block;
+      background-color: #06C755;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section-divider {
+      position: relative;
+      height: 80px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .section-divider svg {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .section2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: url('img/section2_PC.png') no-repeat center center / cover;
+      padding: 3rem 1rem;
+    }
+
+    .reason-box {
+      flex: 1 1 300px;
+      max-width: 400px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .monitor-campaign {
+      padding: 3rem 1rem;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .monitor-campaign .content-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .monitor-campaign .monitor-image img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      display: block;
+    }
+
+    .monitor-campaign .monitor-text {
+      max-width: 500px;
+    }
+
+    .monitor-campaign h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .monitor-campaign .price {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .monitor-campaign .monitor-price {
+      font-weight: bold;
+      color: #d9534f;
+    }
+
+    .monitor-campaign ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.2em;
+    }
+
+    .monitor-campaign ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .firstview h1 {
+        font-size: 1.5rem;
+      }
+      .firstview p {
+        font-size: 1rem;
+      }
+      .section2 {
+        background: none;
+      }
+      .monitor-campaign .content-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
+  <section class="firstview fade-in">
+    <picture>
+      <source media="(max-width: 768px)" srcset="img/firstview-sp.png">
+      <img src="img/firstview.png" alt="ファーストビュー背景">
+    </picture>
+    <div class="firstview-content">
+      <h1>あなたの大切な靴を、プロの手で新品同様に</h1>
+      <p>業界最速仕上げ・送料込みの安心価格</p>
+      <a href="https://lin.ee/PA5YBWN" class="line-button">LINEで今すぐ相談する</a>
+    </div>
+  </section>
 
-<!-- ファーストビュー -->
-<header>
-  <div class="container">
-    <img src="img/desktop-header.png" alt="ヘッダー画像" class="desktop-header-image" loading="lazy" />
-    <div class="slider-container">
-      <div class="slider-track">
-        <img src="img/slide1.png" class="slide" alt="スライド1" loading="lazy">
-        <img src="img/slide2.png" class="slide" alt="スライド2" loading="lazy">
-        <img src="img/slide3.png" class="slide" alt="スライド3" loading="lazy">
+  <div class="section-divider">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+      <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#ffffff"></path>
+    </svg>
+  </div>
+
+  <section class="section2">
+    <div class="reason-box">
+      <h3>業界最速返送</h3>
+      <p>当社に到着して48時間以内の返送対応可能（オプション対応で24時間以内の返送も可能）</p>
+    </div>
+    <div class="reason-box">
+      <h3>安心価格</h3>
+      <p>業界で珍しい、【送料込み】の価格で3,980円を実現！全て税込のわかりやすいプラン設計</p>
+    </div>
+    <div class="reason-box">
+      <h3>熟練職人による手洗い</h3>
+      <p>お客様の大切なスニーカーを、一足一足手洗いで丁寧に洗浄。素材に合わせた最適ケアを実施</p>
+    </div>
+    <div class="reason-box">
+      <h3>簡単手続き</h3>
+      <p>使い慣れたLINEで、都合に合わせた時間で集荷と返送を手配。段ボールの手配も可能（別途料金）</p>
+    </div>
+  </section>
+
+  <section class="monitor-campaign">
+    <div class="content-container">
+      <div class="monitor-image">
+        <img src="img/section3_monitor.png" alt="モニターキャンペーン画像">
+      </div>
+      <div class="monitor-text">
+        <h2>期間限定モニターキャンペーン</h2>
+        <p class="price">通常価格：¥3,980 → <span class="monitor-price">モニター価格：¥1,980</span></p>
+        <ul>
+          <li>before/afterの画像の提供（撮影は当社が行います）</li>
+          <li>商品が届き次第、レビュー入力をお願いします。LINEで返送完了後にレビュー入力フォームを送付</li>
+        </ul>
+        <a href="https://lin.ee/PA5YBWN" class="cta-line-btn">LINEで申し込む</a>
       </div>
     </div>
-    <h1>あなたの大切な靴、プロの手で新品同様に。</h1>
-    <p>最短3日でご自宅にお届け・送料無料</p>
-    <a class="cta-button" href="https://lin.ee/PA5YBWN" target="_blank">今すぐクリーニングを申し込む</a>
-  </div>
-</header>
-
-<main class="container">
-  <section>
-    <h2>選ばれる理由</h2>
-    <ul>
-      <li>高評価レビュー（近日掲載予定）</li>
-      <li>写真付きビフォーアフター（お試しプラン ¥1,980 → 今だけ50%OFF 実施中）</li>
-      <li>熟練職人が手洗い対応</li>
-    </ul>
-    <img src="img/section-reason.png" class="responsive" alt="選ばれる理由" loading="lazy">
   </section>
-
-  <section>
-    <h2>料金プラン</h2>
-    <p>スニーカー（原則白スニーカー ※その他は写真でお問い合わせ）</p>
-    <p>オプション：撥水加工、カビ除去 など</p>
-    <img src="img/section-price.png" class="responsive" alt="料金プラン" loading="lazy">
-  </section>
-
-  <section>
-    <h2>ご利用の流れ</h2>
-    <ol>
-      <li>Webから申し込み</li>
-      <li>宅配キット到着 → 靴を詰めて返送</li>
-      <li>プロが洗浄・補修 → 最短3日で返送</li>
-    </ol>
-    <img src="img/section-flow.png" class="responsive" alt="ご利用の流れ" loading="lazy">
-  </section>
-
-  <section>
-    <h2>お客様の声</h2>
-    <div class="testimonials">
-      <blockquote>
-        <p>「白スニーカーが黄ばみもなく真っ白に！ もう一足お願いしたいと思います。」</p>
-      </blockquote>
-      <blockquote>
-        <p>「スニーカー 洗い方で調べて出てきたこのサイトで依頼。丁寧で感動しました。」</p>
-      </blockquote>
-    </div>
-  </section>
-
-  <section>
-    <h2>よくある質問</h2>
-    <div class="faq">
-      <div class="faq-question" onclick="toggleFaq(this)">Q: 洗えない靴はありますか？</div>
-      <div class="faq-answer">現在はスニーカーのみのクリーニングがメインです。</div>
-      <div class="faq-question" onclick="toggleFaq(this)">Q: カビやにおいは取れますか？</div>
-      <div class="faq-answer">取れる場合もありますが、取れない場合もありますので一度ご相談ください。</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>安心の対応</h2>
-    <ul>
-      <li>全国対応</li>
-      <li>安心の返金保証</li>
-      <li>染み抜き・補色などにも対応</li>
-    </ul>
-    <img src="img/section-trust.png" class="responsive" alt="安心の対応" loading="lazy">
-  </section>
-
-  <section style="text-align:center;">
-    <h2>靴をきれいにしたい方へ</h2>
-    <a class="cta-button" href="https://lin.ee/PA5YBWN" target="_blank">今すぐ靴をきれいにする</a>
-  </section>
-
-  <section class="contact-section">
-    <h2>お問い合わせ</h2>
-    <p>写真を添付のうえ、LINEからお気軽にご相談ください。</p>
-    <a href="https://lin.ee/PA5YBWN" target="_blank" class="line-contact-button">
-      <img src="img/line-contact.png" alt="LINEで相談する" class="responsive" loading="lazy">
-    </a>
-    <p class="business-hours">営業時間：8:00〜18:00</p>
-  </section>
-</main>
-
-<footer>
-  <div class="container">
-    <p>&copy; 2025 靴クリーニングサービス</p>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
 </body>
-</html> 
+</html>
+<!-- 料金プランセクション -->
+<section class="pricing-section" style="padding: 3rem 1rem; background-color: #f7f7f7;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+    <!-- 左側：スタンダードプラン -->
+    <div style="flex: 1 1 300px; max-width: 500px; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <h2 style="font-size: 1.8rem; color: #333; margin-bottom: 1rem;">スタンダードプラン</h2>
+      <p style="font-size: 1.5rem; font-weight: bold; color: #06C755; margin-bottom: 1rem;">¥3,980（税込・送料込み）</p>
+      <ul style="padding-left: 1.2rem;">
+        <li>スニーカー洗浄</li>
+        <li>紐交換無料</li>
+        <li>その他気になる箇所</li>
+      </ul>
+    </div>
+
+    <!-- 右側：オプションプラン一覧 -->
+    <div style="flex: 1 1 300px; max-width: 500px; display: flex; flex-direction: column; gap: 1rem;">
+      <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <strong>緊急お急ぎ便</strong><br>＋¥1,500
+      </div>
+      <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <strong>撥水コーティング</strong><br>＋¥500
+      </div>
+      <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <strong>カビ除去</strong><br>＋¥800
+      </div>
+      <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <strong>補色・修復</strong><br>＋¥1,000～
+      </div>
+      <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <strong>複数セット割</strong><br>1足追加ごとに＋¥1,800～
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 既存コンテンツの直前に挿入されるように追記しました -->
+</body>
+</html>
+<!-- ご利用の流れセクション -->
+<section class="flow-section" style="padding: 3rem 1rem; background-color: #fff;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">ご利用の流れ</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; max-width: 1200px; margin: 0 auto;">
+    <!-- STEP 1 -->
+    <div style="flex: 1 1 200px; max-width: 200px; text-align: center;">
+      <img src="flow_step1.png" alt="スマホで申し込み" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="margin-top: 0.5rem;">スマホで申し込み</p>
+    </div>
+
+    <!-- STEP 2 -->
+    <div style="flex: 1 1 200px; max-width: 200px; text-align: center;">
+      <img src="flow_step2.png" alt="靴を箱に詰める" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="margin-top: 0.5rem;">靴を箱に詰める</p>
+    </div>
+
+    <!-- STEP 3 -->
+    <div style="flex: 1 1 200px; max-width: 200px; text-align: center;">
+      <img src="flow_step3.png" alt="配達員に預ける" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="margin-top: 0.5rem;">配達員に預ける</p>
+    </div>
+
+    <!-- STEP 4 -->
+    <div style="flex: 1 1 200px; max-width: 200px; text-align: center;">
+      <img src="flow_step4.png" alt="クリーニング＆保管" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="margin-top: 0.5rem;">クリーニング＆保管</p>
+    </div>
+
+    <!-- STEP 5 -->
+    <div style="flex: 1 1 200px; max-width: 200px; text-align: center;">
+      <img src="flow_step5.png" alt="お届け" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="margin-top: 0.5rem;">お届け</p>
+    </div>
+  </div>
+</section>
+<!-- お客様の声セクション -->
+<section class="reviews" style="background-color: #f9f9f9; padding: 3rem 1rem;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">お客様の声（モニター募集中）</h2>
+  <div class="review-slider" style="display: flex; overflow-x: auto; gap: 1.5rem; padding: 1rem; scroll-snap-type: x mandatory;">
+    <div style="min-width: 300px; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 1rem; scroll-snap-align: start;">
+      <img src="review1.png" alt="モニター写真1" style="width: 100%; border-radius: 6px;">
+      <p style="margin-top: 0.5rem; font-size: 0.9rem;">「思ったよりもきれいになって感動しました！また利用したいです。」</p>
+    </div>
+    <div style="min-width: 300px; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 1rem; scroll-snap-align: start;">
+      <img src="review2.png" alt="モニター写真2" style="width: 100%; border-radius: 6px;">
+      <p style="margin-top: 0.5rem; font-size: 0.9rem;">「お気に入りのスニーカーが見違えるようにきれいになりました！」</p>
+    </div>
+    <div style="min-width: 300px; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 1rem; scroll-snap-align: start;">
+      <img src="review3.png" alt="モニター写真3" style="width: 100%; border-radius: 6px;">
+      <p style="margin-top: 0.5rem; font-size: 0.9rem;">「子供の靴も頼んで大正解！新品みたいで嬉しいです」</p>
+    </div>
+  </div>
+</section>
+
+<!-- 安心保証セクション -->
+<section class="guarantee" style="background-color: #e6f5ff; padding: 3rem 1rem;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">安心の保証と全国対応</h2>
+  <div style="max-width: 800px; margin: 0 auto; font-size: 1rem; line-height: 1.6;">
+    <ul>
+      <li>万が一仕上がりにご満足いただけなかった場合、再洗浄または全額返金対応いたします。</li>
+      <li>日本全国どこでも対応しております（ヤマト運輸による集荷・配送）。</li>
+      <li style="color: red; font-weight: bold;">※北海道・沖縄は、1配送あたり別途1,980円の送料が必要です。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQセクション -->
+<section class="faq-section" style="background-color: #fff; padding: 3rem 1rem; max-width: 900px; margin: 0 auto;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">よくあるご質問</h2>
+  <div>
+    <details style="margin-bottom: 1.5rem;">
+      <summary style="cursor: pointer; font-weight: bold;">Q. 対応エリアはどちらになりますか？また、送料はどうなりますか？</summary>
+      <p style="margin-top: 0.5rem;">A. 日本全国どちらからでもご利用いただけます。ただし、北海道・沖縄県・離島は1配送あたり1,980円（税込）を別途頂戴しております。</p>
+    </details>
+    <details style="margin-bottom: 1.5rem;">
+      <summary style="cursor: pointer; font-weight: bold;">Q. 納期はどのくらいですか？</summary>
+      <p style="margin-top: 0.5rem;">A. 当社到着から48時間以内に返送いたしますので、通常ご注文から7日以内に納品となります。</p>
+    </details>
+    <details style="margin-bottom: 1.5rem;">
+      <summary style="cursor: pointer; font-weight: bold;">Q. 臭いは取れますか？</summary>
+      <p style="margin-top: 0.5rem;">A. 特殊な消臭剤を使用し靴の内部まで丁寧に消臭処理を行いますが、長期間の使用による染み付いた臭いは完全に取りきれない場合がございます。</p>
+    </details>
+    <details style="margin-bottom: 1.5rem;">
+      <summary style="cursor: pointer; font-weight: bold;">Q. 黄ばみは取れますか？</summary>
+      <p style="margin-top: 0.5rem;">A. 基本的に除去可能ですが、スニーカーの素材や黄ばみの程度によっては完全な除去が難しい場合がございます。</p>
+    </details>
+    <details style="margin-bottom: 1.5rem;">
+      <summary style="cursor: pointer; font-weight: bold;">Q. カビの除去は可能ですか？</summary>
+      <p style="margin-top: 0.5rem;">A. 抗菌効果のある洗剤を用いてカビの除去が可能ですが、素材の奥深くまで浸透している場合は完全な除去が難しいケースもございます。</p>
+    </details>
+    <details style="margin-bottom: 1.5rem;">
+      <summary style="cursor: pointer; font-weight: bold;">Q. 高級ブランドのスニーカーも安心して預けられますか？</summary>
+      <p style="margin-top: 0.5rem;">A. 専用スポンジを使用した丁寧なクリーニングと型崩れ防止のための専用ラッピングで安心してご依頼いただけます。</p>
+    </details>
+    <details style="margin-bottom: 1.5rem;">
+      <summary style="cursor: pointer; font-weight: bold;">Q. キャンセルは可能ですか？</summary>
+      <p style="margin-top: 0.5rem;">A. クリーニング作業前であればキャンセル可能です。ただし、送料はお客様負担となり、作業開始後のキャンセルはお受けできません。</p>
+    </details>
+  </div>
+</section>

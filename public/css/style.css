@@ -228,4 +228,119 @@ button[type="submit"] {
   color: #666;
   font-size: 0.9rem;
   margin-top: 1rem;
+}
+
+/* モニターキャンペーンセクション */
+.monitor-campaign {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.monitor-campaign .content-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.monitor-campaign .monitor-image img {
+  width: 800px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.monitor-campaign .monitor-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.monitor-campaign .monitor-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: left;
+}
+
+.monitor-campaign .price {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.monitor-campaign .monitor-price {
+  font-weight: bold;
+  color: #d9534f;
+  font-size: 1.4rem;
+}
+
+.monitor-campaign .conditions {
+  list-style: disc;
+  padding-left: 1.2em;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.monitor-campaign .conditions li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.monitor-campaign .cta-line-btn {
+  display: inline-block;
+  background-color: #06C755;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.monitor-campaign .cta-line-btn:hover {
+  background-color: #05b14c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .monitor-campaign .content-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .monitor-campaign .monitor-image {
+    margin-bottom: 2rem;
+  }
+
+  .monitor-campaign .monitor-text {
+    max-width: 100%;
+  }
+
+  .monitor-campaign .monitor-text h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .monitor-campaign .conditions {
+    text-align: left;
+    display: inline-block;
+  }
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 } 
