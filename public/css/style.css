@@ -636,7 +636,7 @@ button[type="submit"] {
     box-sizing: border-box;
   }
   .firstview h1 {
-    color: #00BCD4 !important;
+    color: #fff !important;
     font-weight: 900 !important;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7) !important;
   }
