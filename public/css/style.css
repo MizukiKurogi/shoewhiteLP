@@ -630,6 +630,19 @@ button[type="submit"] {
   .menu-toggle {
     display: block;
   }
+  section {
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+    box-sizing: border-box;
+  }
+  .firstview h1 {
+    color: #00BCD4 !important;
+    font-weight: 900 !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7) !important;
+  }
+  .firstview p {
+    color: #fff !important;
+  }
 }
 
 .scroll-indicator {
@@ -703,9 +716,10 @@ button[type="submit"] {
 }
 
 .firstview h1 {
-  font-size: 3.2rem;
-  font-weight: 900;
   color: #111;
+  font-weight: 900;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
+  font-size: 3.2rem;
   letter-spacing: 0.02em;
   margin-bottom: 1.5rem;
 }
